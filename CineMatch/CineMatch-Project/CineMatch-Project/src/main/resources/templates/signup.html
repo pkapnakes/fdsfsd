@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup - CineMatch</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="background-gradient">
+
+<div class="login-container">
+    <h2 class="title">Εγγραφή στο CineMatch</h2>
+
+    <form action="/signup" method="post">
+
+        <!-- Username -->
+        <input class="input-field" type="text" name="username" placeholder="Όνομα χρήστη" required>
+
+        <!-- Email -->
+        <input class="input-field" type="email" name="email" placeholder="Email" required>
+
+        <!-- Password -->
+        <input class="input-field" type="password" id="password" name="password"
+               placeholder="Κωδικός πρόσβασης" required>
+
+        <div class="checkbox-row">
+            <input type="checkbox" onclick="togglePassword()">
+            <label for="showPass">Εμφάνιση κωδικού πρόσβασης</label>
+        </div>
+
+        <!-- Confirm password -->
+        <input class="input-field" type="password" id="confirmPassword" name="confirmPassword"
+               placeholder="Επαλήθευση κωδικού" required>
+
+        <div class="checkbox-row">
+            <input type="checkbox" onclick="toggleConfirmPassword()">
+            <label>Εμφάνιση επαλήθευσης κωδικού</label>
+        </div>
+
+        <!-- Optional: αγαπημένο genre -->
+        <input class="input-field" type="text" name="favoriteGenre" placeholder="Αγαπημένο είδος (προαιρετικό)">
+
+        <!-- Signup button -->
+        <button class="login-button" type="submit">Εγγραφή</button>
+
+        <!-- Back to login -->
+        <p class="register-text" style="margin-top: 18px;">
+            Έχεις ήδη λογαριασμό;
+            <a href="/login">Σύνδεση</a>
+        </p>
+    </form>
+</div>
+
+<script>
+    function togglePassword() {
+        const field = document.getElementById("password");
+        field.type = field.type === "password" ? "text" : "password";
+    }
+    function toggleConfirmPassword() {
+        const field = document.getElementById("confirmPassword");
+        field.type = field.type === "password" ? "text" : "password";
+    }
+</script>
+
+</body>
+</html>
